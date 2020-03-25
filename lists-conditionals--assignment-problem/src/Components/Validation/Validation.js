@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
-const validation = props => {
+const Validation = props => {
   let count = "text too short";
 
-  if (props.length > 5) {
+  if (props.length >= 5) {
     count = "text is long enough";
   }
   return (
@@ -13,4 +13,4 @@ const validation = props => {
   );
 };
 
-export default validation;
+export default Validation;

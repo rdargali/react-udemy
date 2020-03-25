@@ -2,15 +2,33 @@ import React, { Component } from "react";
 import "./App.css";
 
 import Validation from "./Components/Validation/Validation";
+import Char from "./Components/Char/Char";
 
 class App extends Component {
   state = {
     userInput: ""
   };
+
   inputChangeHandler = event => {
     this.setState({ userInput: event.target.value });
   };
+
+  handleDelete = characterIndex => {
+    console.log("handle delete on index#" + characterIndex);
+  };
+
   render() {
+    //characterList
+    const CharacterList = this.state.userInput
+      .split("")
+      .map((character, index) => (
+        <Char
+          key={index}
+          clicked={() => this.handleDelete(index)}
+          character={character}
+        />
+      ));
+    //end characterList
     return (
       <div className="App">
         <ol>
@@ -58,6 +76,12 @@ class App extends Component {
         <p>{this.state.userInput.length}</p>
 
         <Validation length={this.state.userInput.length} />
+
+        <hr />
+        <hr />
+        <hr />
+
+        {CharacterList}
       </div>
     );
   }
