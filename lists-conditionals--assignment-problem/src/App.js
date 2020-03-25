@@ -1,7 +1,15 @@
 import React, { Component } from "react";
 import "./App.css";
 
+import Validation from "./Components/Validation/Validation";
+
 class App extends Component {
+  state = {
+    userInput: ""
+  };
+  inputChangeHandler = event => {
+    this.setState({ userInput: event.target.value });
+  };
   render() {
     return (
       <div className="App">
@@ -37,11 +45,19 @@ class App extends Component {
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
 
-        <br />
-        <br />
-        <br />
+        <hr />
+        <hr />
+        <hr />
 
-        <input type="text" value="hello" />
+        <input
+          type="text"
+          onChange={this.inputChangeHandler}
+          value={this.state.userInput}
+        />
+        <p>{this.state.userInput}</p>
+        <p>{this.state.userInput.length}</p>
+
+        <Validation length={this.state.userInput.length} />
       </div>
     );
   }
