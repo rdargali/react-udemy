@@ -14,7 +14,13 @@ class App extends Component {
   };
 
   handleDelete = characterIndex => {
-    console.log("handle delete on index#" + characterIndex);
+    const text = this.state.userInput.split("");
+
+    text.splice(characterIndex, 1);
+
+    const updatedText = text.join("");
+
+    this.setState({ userInput: updatedText });
   };
 
   render() {
