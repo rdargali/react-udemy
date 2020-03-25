@@ -36,7 +36,6 @@ class App extends Component {
           </li>
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
-        <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
       </div>
     );
   }
