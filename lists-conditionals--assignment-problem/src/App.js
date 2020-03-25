@@ -36,6 +36,12 @@ class App extends Component {
           </li>
         </ol>
         <p>Hint: Keep in mind that JavaScript strings are basically arrays!</p>
+
+        <br />
+        <br />
+        <br />
+
+        <input type="text" value="hello" />
       </div>
     );
   }
