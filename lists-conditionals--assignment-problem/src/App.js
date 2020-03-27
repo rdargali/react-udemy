@@ -9,8 +9,8 @@ class App extends Component {
     userInput: ""
   };
 
-  inputChangeHandler = event => {
-    this.setState({ userInput: event.target.value });
+  inputChangeHandler = e => {
+    this.setState({ userInput: e.target.value });
   };
 
   handleDelete = characterIndex => {
